@@ -1,0 +1,36 @@
+{
+  "agent": "byngox",
+  "version": "1.0",
+  "description": "Byngox 8-agent swarm — max capability manifest",
+  "capabilities": [
+    {
+      "domain": "fs",
+      "op":     "read",
+      "scope":  "/home/user/projects",
+      "ttl":    3600,
+      "note":   "Project file access for context agents"
+    },
+    {
+      "domain": "net",
+      "op":     "connect",
+      "scope":  "443",
+      "ttl":    3600,
+      "note":   "HTTPS outbound for network agent"
+    },
+    {
+      "domain": "gpu",
+      "op":     "compute",
+      "scope":  "*",
+      "ttl":    7200,
+      "modes":  ["ai"],
+      "note":   "GPU inference — only granted in AI mode"
+    },
+    {
+      "domain": "ipc",
+      "op":     "connect",
+      "scope":  "agent-bus",
+      "ttl":    "session",
+      "note":   "Sorabbyngo agent bus — inter-agent communication"
+    }
+  ]
+}
